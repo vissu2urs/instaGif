@@ -1,0 +1,15 @@
+PODS:
+  - Alamofire (4.6.0)
+  - SwiftGifOrigin (1.6.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - SwiftGifOrigin (~> 1.6.1)
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+
+PODFILE CHECKSUM: 8e69c83704f4d5695f518c4858a17f948ec68f0b
+
+COCOAPODS: 1.4.0

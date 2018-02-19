@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pics-->
+        <scene sceneID="pK1-S0-0yd">
+            <objects>
+                <viewController storyboardIdentifier="SelectPicVC" id="jBn-e3-MB0" customClass="SelectPicViewController" customModule="emogiphy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M5e-e2-U9y"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jc7-yL-1y8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S4E-ih-ZgZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lzc-H7-Kbb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="FKn-es-Ach">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="Fuq-7j-rjY">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lzc-H7-Kbb" secondAttribute="trailing" id="NYY-gQ-vw0"/>
+                            <constraint firstItem="lzc-H7-Kbb" firstAttribute="leading" secondItem="S4E-ih-ZgZ" secondAttribute="leading" id="PRi-XH-7Mh"/>
+                            <constraint firstItem="lzc-H7-Kbb" firstAttribute="top" secondItem="M5e-e2-U9y" secondAttribute="bottom" id="qdj-yB-cgr"/>
+                            <constraint firstItem="Jc7-yL-1y8" firstAttribute="top" secondItem="lzc-H7-Kbb" secondAttribute="bottom" id="rAl-R1-7ne"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pics" image="image-caption" id="jGO-jj-dY5"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="picCollectionView" destination="lzc-H7-Kbb" id="cr7-Fp-esh"/>
+                        <segue destination="vLA-ji-abg" kind="show" identifier="showgifs" id="hzW-Py-OE7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vUt-2C-4nO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="145"/>
+        </scene>
+        <!--GiphySearchResult-->
+        <scene sceneID="9Yo-yq-lYH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GiphySearchResult" id="vLA-ji-abg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xWL-uU-ZdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image-caption" width="30" height="30"/>
+    </resources>
+</document>

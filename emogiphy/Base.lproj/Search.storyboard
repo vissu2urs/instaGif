@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search-->
+        <scene sceneID="DxH-Yu-DOS">
+            <objects>
+                <viewController storyboardIdentifier="SearchVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z7a-FO-5Pr" customClass="SearchViewController" customModule="emogiphy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uWF-T2-i8Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="sKL-5X-YoL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fPO-Gf-zcY" customClass="UIButton">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbX-1X-X1N">
+                                <rect key="frame" x="37" y="243" width="300" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5U3-h4-Ru7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <outlet property="delegate" destination="z7a-FO-5Pr" id="hwn-Li-xUK"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDF-36-VXd">
+                                <rect key="frame" x="37" y="308" width="300" height="50"/>
+                                <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1pU-3c-oRj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Search Gifs">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="1"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="gifSearchButtonAction:" destination="z7a-FO-5Pr" eventType="touchUpInside" id="jdw-pz-N3i"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dbX-1X-X1N" firstAttribute="leading" secondItem="fPO-Gf-zcY" secondAttribute="leadingMargin" constant="21" id="AUe-F2-JVx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dbX-1X-X1N" secondAttribute="trailing" constant="22" id="EB2-fG-XhF"/>
+                            <constraint firstItem="YDF-36-VXd" firstAttribute="centerY" secondItem="fPO-Gf-zcY" secondAttribute="centerY" id="Whc-py-3HI"/>
+                            <constraint firstItem="YDF-36-VXd" firstAttribute="leading" secondItem="fPO-Gf-zcY" secondAttribute="leadingMargin" constant="21" id="dqe-gc-BEr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YDF-36-VXd" secondAttribute="trailing" constant="22" id="evS-cy-cDr"/>
+                            <constraint firstItem="YDF-36-VXd" firstAttribute="centerX" secondItem="fPO-Gf-zcY" secondAttribute="centerX" id="lyz-lA-E2y"/>
+                            <constraint firstItem="YDF-36-VXd" firstAttribute="top" secondItem="dbX-1X-X1N" secondAttribute="bottom" constant="15" id="znm-sK-kuQ"/>
+                        </constraints>
+                        <connections>
+                            <action selector="viewAction:" destination="z7a-FO-5Pr" eventType="touchUpInside" id="dLW-22-ohm"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="searchIcon" id="DRq-FX-b9Z">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="searchSel"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.7803921568627451" green="0.7803921568627451" blue="0.7803921568627451" alpha="0.0" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchText" destination="dbX-1X-X1N" id="cQj-9k-Wsh"/>
+                        <segue destination="HxR-X8-b2o" kind="show" identifier="SearchResult" id="mdY-32-Lkb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUh-C0-cS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184.80000000000001" y="-72.413793103448285"/>
+        </scene>
+        <!--GiphySearchResult-->
+        <scene sceneID="IGa-gJ-9EB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GiphySearchResult" id="HxR-X8-b2o" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJY-1U-1Hx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="-122"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="searchIcon" width="32" height="32"/>
+        <image name="searchSel" width="32" height="32"/>
+    </resources>
+</document>

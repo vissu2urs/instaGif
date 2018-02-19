@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="piccell" id="gTV-IL-0wX" customClass="SelectPicCollectionViewCell" customModule="emogiphy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="161" height="148"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="161" height="148"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qzf-VX-8sy">
+                        <rect key="frame" x="0.0" y="0.0" width="161" height="148"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="qzf-VX-8sy" secondAttribute="trailing" id="5Hm-N5-kay"/>
+                <constraint firstAttribute="bottom" secondItem="qzf-VX-8sy" secondAttribute="bottom" id="NPb-wG-gBH"/>
+                <constraint firstItem="qzf-VX-8sy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cBx-ob-yMb"/>
+                <constraint firstItem="qzf-VX-8sy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eKK-r9-hgD"/>
+            </constraints>
+            <connections>
+                <outlet property="searchPic" destination="qzf-VX-8sy" id="YMl-Sq-35g"/>
+            </connections>
+            <point key="canvasLocation" x="-195" y="-93"/>
+        </collectionViewCell>
+    </objects>
+</document>

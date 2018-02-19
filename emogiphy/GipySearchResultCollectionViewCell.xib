@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="giphycell" id="gTV-IL-0wX" customClass="GipySearchResultCollectionViewCell" customModule="emogiphy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="161" height="148"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="161" height="148"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cgV-7C-wDD">
+                        <rect key="frame" x="0.0" y="0.0" width="161" height="148"/>
+                    </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hRE-p1-MuA">
+                        <rect key="frame" x="70.5" y="64" width="20" height="20"/>
+                    </activityIndicatorView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="cgV-7C-wDD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ew6-W3-TdA"/>
+                <constraint firstItem="hRE-p1-MuA" firstAttribute="centerX" secondItem="cgV-7C-wDD" secondAttribute="centerX" id="Wdl-3V-TyB"/>
+                <constraint firstAttribute="trailing" secondItem="cgV-7C-wDD" secondAttribute="trailing" id="bFF-HE-VF6"/>
+                <constraint firstItem="cgV-7C-wDD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dCT-cs-fx7"/>
+                <constraint firstItem="hRE-p1-MuA" firstAttribute="centerY" secondItem="cgV-7C-wDD" secondAttribute="centerY" id="vjn-7U-oHI"/>
+                <constraint firstAttribute="bottom" secondItem="cgV-7C-wDD" secondAttribute="bottom" id="z0H-aV-O7i"/>
+            </constraints>
+            <size key="customSize" width="161" height="148"/>
+            <connections>
+                <outlet property="spinner" destination="hRE-p1-MuA" id="xtz-KX-2fb"/>
+                <outlet property="swiftGifView" destination="cgV-7C-wDD" id="QJQ-Am-tCP"/>
+            </connections>
+            <point key="canvasLocation" x="51.5" y="72"/>
+        </collectionViewCell>
+    </objects>
+</document>

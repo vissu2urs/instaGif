@@ -11,8 +11,8 @@ import UIKit
 import QuartzCore
 
 public enum AlertStyle {
-    case Success,Error,Warning,None
-    case CustomImag(imageFile:String)
+    case success,error,warning,none
+    case customImag(imageFile:String)
 }
 
 public class SweetAlert: UIViewController {
@@ -186,7 +186,7 @@ public class SweetAlert: UIViewController {
 
         UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: { () -> Void in
             self.view.alpha = 0.0
-        }) { (Bool) -> Void in
+        }) { (bool) -> Void in
             self.view.removeFromSuperview()
             self.cleanUpAlert()
             
@@ -206,7 +206,7 @@ public class SweetAlert: UIViewController {
     }
     
     public func showAlert(title: String) -> SweetAlert {
-        _ = self.showAlert(title: title, subTitle: nil, style: .None)
+        _ = self.showAlert(title: title, subTitle: nil, style: .none)
         return self
     }
     
@@ -249,20 +249,20 @@ public class SweetAlert: UIViewController {
             self.setupSubtitleTextView()
  
             switch style {
-            case .Success:
+            case .success:
                 self.animatedView = SuccessAnimatedView()
                 
-            case .Error:
+            case .error:
                 self.animatedView = CancelAnimatedView()
                 
-            case .Warning:
+            case .warning:
                 self.animatedView = InfoAnimatedView()
                 
-            case let .CustomImag(imageFile):
+            case let .customImag(imageFile):
                 if let image = UIImage(named: imageFile) {
                     self.imageView = UIImageView(image: image)
                 }
-            case .None:
+            case .none:
                 self.animatedView = nil
             }
 
@@ -312,17 +312,17 @@ public class SweetAlert: UIViewController {
         self.contentView.layer.transform = CATransform3DMakeScale(0.9, 0.9, 0.0);
         UIView.animate(withDuration: 0.2, animations: { () -> Void in
             self.contentView.layer.transform = CATransform3DMakeScale(1.1, 1.1, 0.0);
-            }) { (Bool) -> Void in
+            }) { (bool) -> Void in
                 UIView.animate(withDuration: 0.1, animations: { () -> Void in
                     self.contentView.layer.transform = CATransform3DMakeScale(0.9, 0.9, 0.0);
-                    }) { (Bool) -> Void in
+                    }) { (bool) -> Void in
                         UIView.animate(withDuration: 0.1, animations: { () -> Void in
                             self.contentView.layer.transform = CATransform3DMakeScale(1.0, 1.0, 0.0);
                             if self.animatedView != nil {
                                 self.animatedView!.animate()
                             }
 
-                            }) { (Bool) -> Void in
+                            }) { (bool) -> Void in
 
                                 self.contentView.transform = previousTransform
                         }

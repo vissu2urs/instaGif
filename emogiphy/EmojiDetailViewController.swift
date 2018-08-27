@@ -40,7 +40,7 @@ class EmojiDetailViewController: UIViewController, MFMessageComposeViewControlle
             check = true
             self.present(twitterComposeVC!, animated: true, completion: nil)
         } else {
-               _ = SweetAlert().showAlert(title: "ALERT", subTitle: Message.twitterAlert, style: .Warning)
+               _ = SweetAlert().showAlert(title: "ALERT", subTitle: Message.twitterAlert, style: .warning)
         }
         return check
     }
@@ -55,7 +55,7 @@ class EmojiDetailViewController: UIViewController, MFMessageComposeViewControlle
             check = true
             self.present(facebookComposeVC!, animated: true, completion: nil)
         } else {
-             _ = SweetAlert().showAlert(title: "ALERT", subTitle: Message.facebookAlert, style: .Warning)
+             _ = SweetAlert().showAlert(title: "ALERT", subTitle: Message.facebookAlert, style: .warning)
         }
         return check
     }
@@ -101,7 +101,7 @@ class EmojiDetailViewController: UIViewController, MFMessageComposeViewControlle
             check = true
             self.present(messageVC, animated: true, completion: nil)
         } else {
-               _ = SweetAlert().showAlert(title: "ALERT", subTitle: Message.iMessageAlert, style: .Warning)
+               _ = SweetAlert().showAlert(title: "ALERT", subTitle: Message.iMessageAlert, style: .warning)
         }
         return check
     }

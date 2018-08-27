@@ -18,9 +18,9 @@ class EmojiDetailViewController: UIViewController, MFMessageComposeViewControlle
     var documentInteractionController: UIDocumentInteractionController = UIDocumentInteractionController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let image = UIImage.gif(data:imageData! as Data )
+        let image = UIImage.gif(data: imageData! as Data )
         gifImageView.image = image
-        let barButton1 = UIBarButtonItem(image: UIImage(named: "more"), style: .plain, target:self, action: #selector(self.whatsAppAction))
+        let barButton1 = UIBarButtonItem(image: UIImage(named: "more"), style: .plain, target: self, action: #selector(self.whatsAppAction))
         barButton1.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = barButton1
         self.navigationItem.title = "InstaGif"
@@ -35,7 +35,7 @@ class EmojiDetailViewController: UIViewController, MFMessageComposeViewControlle
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
             let twitterComposeVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
             //twitterComposeVC?.setInitialText("sample test ")
-            twitterComposeVC?.add(URL(string : imageURL!))
+            twitterComposeVC?.add(URL(string: imageURL!))
             // Display the compose view controller.
             check = true
             self.present(twitterComposeVC!, animated: true, completion: nil)
@@ -51,7 +51,7 @@ class EmojiDetailViewController: UIViewController, MFMessageComposeViewControlle
         var check = false
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
             let facebookComposeVC = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-            facebookComposeVC?.add(URL(string : imageURL!))
+            facebookComposeVC?.add(URL(string: imageURL!))
             check = true
             self.present(facebookComposeVC!, animated: true, completion: nil)
         } else {

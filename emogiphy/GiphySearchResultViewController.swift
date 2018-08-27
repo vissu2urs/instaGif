@@ -68,7 +68,7 @@ extension GiphySearchResultViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return Utility.cellSizeFor(deviceWidth:UIScreen.main.bounds.width, view: view)
+        return Utility.cellSizeFor(deviceWidth: UIScreen.main.bounds.width, view: view)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let downsizedURL = GiphyService.giphyDownsizedURLFor(index: indexPath.item, inData: giphys)
@@ -81,7 +81,7 @@ extension GiphySearchResultViewController: UICollectionViewDelegateFlowLayout {
             }
         }
     }
-    func gipySelectionAction(directURL: String?, downsizedURL: String?, completionHandler: @escaping([String:Any]?) -> Void) {
+    func gipySelectionAction(directURL: String?, downsizedURL: String?, completionHandler: @escaping([String: Any]?) -> Void) {
         var dictObject: [String: Any] = [String: Any]()
         if directURL != nil {
             dictObject["imageURL"] = directURL

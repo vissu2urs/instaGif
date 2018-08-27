@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftGifOrigin
 class GiphyService {
-    class func giphysDataForSearch(text: String?, type: GiphyType?, completionHandler: @escaping ([[String:Any]]) -> Void) {
+    class func giphysDataForSearch(text: String?, type: GiphyType?, completionHandler: @escaping ([[String: Any]]) -> Void) {
         var parameters: Parameters = [JSONFields.apiKey: Keys.giphy]
         if type == .normal || type == nil {
             parameters[JSONFields.query] = text!
@@ -18,7 +18,7 @@ class GiphyService {
         let fetchURL = APIs.urls[type ?? .normal]
         Alamofire.request(fetchURL!, parameters: parameters).responseJSON { response in
             if let result = response.result.value as? [String: Any] {
-                if let data = result["data"] as? [[String:Any]] {
+                if let data = result["data"] as? [[String: Any]] {
                     completionHandler(data)
                 }
             } else {
@@ -36,8 +36,8 @@ class GiphyService {
         var directURL: String?
         if data.indices.contains(index) {
             let giphyData = data[index]
-            if let images = giphyData[JSONFields.giphyImages] as? [String:Any] {
-                if let fixed_height_small = images[JSONFields.giphyImageSmallSize] as? [String:Any] {
+            if let images = giphyData[JSONFields.giphyImages] as? [String: Any] {
+                if let fixed_height_small = images[JSONFields.giphyImageSmallSize] as? [String: Any] {
                     smallgifURL = fixed_height_small[JSONFields.giphyImageURL] as? String
                 }
             }
@@ -47,12 +47,12 @@ class GiphyService {
         }
         return (smallgifURL, directURL)
     }
-    class func giphyDownsizedURLFor(index: Int, inData data: [[String:Any]]) -> String? {
+    class func giphyDownsizedURLFor(index: Int, inData data: [[String: Any]]) -> String? {
         var downsizedURL: String?
         if data.indices.contains(index) {
             let giphyData = data[index]
-            if let images = giphyData[JSONFields.giphyImages] as? [String:Any] {
-                if let downsized = images[JSONFields.downsizedMedium] as? [String:Any] {
+            if let images = giphyData[JSONFields.giphyImages] as? [String: Any] {
+                if let downsized = images[JSONFields.downsizedMedium] as? [String: Any] {
                     downsizedURL = downsized[JSONFields.giphyImageURL] as? String
                 }
             }

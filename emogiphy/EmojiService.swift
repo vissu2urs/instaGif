@@ -8,8 +8,8 @@
 
 import Foundation
 class EmojiService {
-    fileprivate class func dataSource(searchType: SearchType) -> [[String:Any]] {
-        var data = [[String:Any]] ()
+    fileprivate class func dataSource(searchType: SearchType) -> [[String: Any]] {
+        var data = [[String: Any]] ()
         if searchType == .emoji {
             data = [[StrConstants.searchTerms: ["laugh", "smile", "joy", "ha ha", "rofl"], SearchType.emoji.rawValue: "😂"],
                                         [StrConstants.searchTerms: ["grin", "funny", "lol", "awesome"], SearchType.emoji.rawValue: "😬"],
@@ -30,7 +30,7 @@ class EmojiService {
                                         [StrConstants.searchTerms: ["love", "flying kiss", "awesome", "thumbs up", "wink"],
                                          SearchType.emoji.rawValue: "😘"]]
         } else if searchType == .image {
-            data = [[StrConstants.searchTerms:["Sarcasm", "slow clap", "clap", "sarcastic"], SearchType.image.rawValue: "Sarcasm"],
+            data = [[StrConstants.searchTerms: ["Sarcasm", "slow clap", "clap", "sarcastic"], SearchType.image.rawValue: "Sarcasm"],
                     [StrConstants.searchTerms: ["Nerdgasm", "geek"], SearchType.image.rawValue: "Nerdgasm"],
                     [StrConstants.searchTerms: ["Hot", "sexy"], SearchType.image.rawValue: "HotStuff"],
                     [StrConstants.searchTerms: ["cat", "funny cat"], SearchType.image.rawValue: "Cat-ostrophic"],

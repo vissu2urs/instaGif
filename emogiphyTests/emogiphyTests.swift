@@ -69,12 +69,12 @@ class EmogiphyTests: XCTestCase {
         if let searchText = EmojiService.searchTermsFor(index: 3, searchType: .emoji) {
             XCTAssert(searchText == ["geeky", "studious", "nerd", "bots", "books"])
         } else {
-            XCTFail()
+            XCTFail("no objects found")
         }
         if let picSearchText = EmojiService.searchTermsFor(index: 3, searchType: .image) {
             XCTAssert(picSearchText == ["cat", "funny cat"])
         } else {
-            XCTFail()
+            XCTFail("no objects found")
         }
         let searchNotFound = EmojiService.searchTermsFor(index: 10001, searchType: .emoji)
         XCTAssert(searchNotFound == nil)
@@ -85,7 +85,7 @@ class EmogiphyTests: XCTestCase {
             if giphyData.count > 0 {
                 expection1.fulfill()
             } else {
-                XCTFail()
+                XCTFail("no objects available")
             }
         }
         waitForExpectations(timeout: 30.0) { error in
@@ -96,7 +96,7 @@ class EmogiphyTests: XCTestCase {
             if giphyData.count == 0 {
                 expection3.fulfill()
             } else {
-                XCTFail()
+                XCTFail("no objects found")
             }
         }
         waitForExpectations(timeout: 30.0) { error in
@@ -109,7 +109,7 @@ class EmogiphyTests: XCTestCase {
             if giphyData.count > 0 {
                 expectation1.fulfill()
             } else {
-                XCTFail()
+                XCTFail("no objects found")
             }
         }
         waitForExpectations(timeout: 30.0) { error in
@@ -128,7 +128,7 @@ class EmogiphyTests: XCTestCase {
             //XCTAssertTrue(giphyVC.gipySelectionAction(smallURL: smallURL, directURL: downsizedURL))
             //XCTAssertNotNil(localURL)
         } else {
-            XCTFail()
+            XCTFail("no objects found")
         }
     }
     func testgipySelectionAction() {
@@ -171,7 +171,7 @@ class EmogiphyTests: XCTestCase {
         if downsizedURL != nil {
             XCTAssertEqual(downsizedURL, "http://media4.giphy.com/media/3o7aTpFglw46r5BfHi/200w_s.gif")
         } else {
-            XCTFail()
+            XCTFail("no objects found")
         }
     }
     func testsetLoading() {
@@ -223,7 +223,7 @@ class EmogiphyTests: XCTestCase {
         }
     }
     func testsearchTextForSearchTerms() {
-        let searchText = giphyVC.searchTextFor(searchTerms:  ["laugh", "smile", "joy", "ha ha", "rofl"])
+        let searchText = giphyVC.searchTextFor(searchTerms: ["laugh", "smile", "joy", "ha ha", "rofl"])
         XCTAssertNotNil(searchText)
         XCTAssertNil(giphyVC.searchTextFor(searchTerms: nil))
     }
